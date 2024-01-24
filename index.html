@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>collor-picker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Fragment+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="color-picker">
+    <div class="c-b-parent">
+      <div class="color-box" id="color-box"></div>
+    </div>
+    <div class="inputs">
+      <div>
+        <label for="hue-range">Matís:</label>
+        <input class="slider" type="range" id="hue-range" min="0" max="360" value="180"  >
+      </div>
+      
+      <div>
+        <label for="brightness-range">Brightness:</label>
+        <input class="slider" type="range" id="brightness-range" min="0" max="100" value="50"  >
+      </div>
+      <div>
+        <label for="saturation-range">Saturation:</label>
+        <input class="slider" type="range" id="saturation-range" min="0" max="100" value="100"  >
+      </div>
+      <div>
+
+        <label for="opacity-range">Opacity:</label>
+        <div class="back-op">
+          <input class="slider" type="range" id="opacity-range" min="0" max="100" value="100" >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="valores" id="valores" spellcheck="false">
+    <div class="input-txt active">
+      <label for="rgb">RGB or RGBA</label>
+      <input type="text" id="rgb">
+    </div>
+    <div class="input-txt">
+      <label for="hex">HEX</label>
+      <input type="text" id="hex">
+    </div>
+    <div class="input-txt">
+      <label for="hsl">HSL or HSLA</label>
+      <input type="text" id="hsl">
+    </div>
+    <div class="input-txt">
+      <label for="cmyk">CMYK</label>
+      <input type="text" id="cmyk">
+    </div>
+  </div>
+  <div id="copy">
+    copiar:
+  </div>
+  </body>
+  <script src="app.js"></script>
+</html>

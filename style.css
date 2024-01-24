@@ -1,0 +1,202 @@
+:root{
+   --cldark1:#151515;
+   --cldark2:#242424;
+   --cldark3:#333333;
+   --clgreen:#60FF8C;
+   --clcian :#8CF1FF;
+   --clwhite:#DAF6FA;
+   --clred  :#FF002E;
+   --clpink :#C80078;
+}
+@font-face {
+   font-family: 'uixfont';
+   src: url('./tecmono.ttf') format('truetype');
+   /* Outras propriedades opcionais */
+   font-weight: normal;
+   font-style: normal;
+ }
+ 
+body {
+   flex-direction: column;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+   background-color: var(--cldark2);
+   width: 100vw;
+   padding: 0;
+   overflow:hidden ;
+}
+*{
+   font-family: "uixfont",consolas,sans-serif;
+   border-radius: 5px;
+}
+div{
+   user-select: none;
+}
+.color-picker {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 10px;
+   background-color: transparent;
+   border-radius: 8px;
+   justify-content: center;
+   align-content: center;
+   width:calc(100vw - 20px) ;
+   margin-top: -20px;
+}
+.inputs{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+   color: var(--clwhite);
+   width: 60%;
+}
+.inputs div{
+   width: 100%;
+}
+ .color-box {
+   width: 100%;
+   height: 150px;
+   border-radius:4px ;
+   background-size: 20px;
+ }
+.c-b-parent{
+   width: 40%;
+   background-size: 20px;
+   background-image: url(./pngTile.png);
+   border: 1px solid var(--cldark3);
+
+}
+#hue-range{
+   background: linear-gradient(to right,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%));
+}
+#brightness-range{
+   background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(212,212,212,0) 50%, rgba(255,255,255,1) 100%);
+}
+#saturation-range{
+   background: linear-gradient(90deg,rgb(128, 128, 128) 0%,rgba(0,0,0,0)100%);
+}
+.back-op{
+   width: 100%;
+   background-image: url(./pngTile.png);
+   display: block;
+   height: 15px;
+   background-size: 15px;
+   margin: 0;
+   position: relative;
+   margin-top: 4px;
+}
+#opacity-range{
+   top: 0;
+   background-color: rgba(0, 0, 0, 0);
+   position: absolute;
+   z-index: 99;
+   margin: 0;
+}
+.slider {
+   -webkit-appearance: none;  /* Override default CSS styles */
+   appearance: none;
+   width: 100%; /* Full-width */
+   height: 15px; /* Specified height */
+   background: #d3d3d3; /* Grey background */
+   outline: none; /* Remove outline */ /* Set transparency (for mouse-over effects on hover) */
+   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+   transition: opacity .2s;
+}
+ 
+ /* Mouse-over effects */
+.slider:hover {
+   opacity: 1; /* Fully shown on mouse-over */
+ }
+ 
+ /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+   -webkit-appearance: none; /* Override default look */
+   appearance: none;
+   width: 15px; /* Set a specific slider handle width */
+   height: 25px; /* Slider handle height */
+   background: var(--cldark1); /* Green background */
+   cursor: pointer; /* Cursor on hover */
+   border: solid 1px var(--cldark3);
+   outline:solid 1px #60ff8d15;
+   border-radius: 4px;
+}
+ 
+.slider::-moz-range-thumb {
+   width: 25px; /* Set a specific slider handle width */
+   height: 25px; /* Slider handle height */
+   background: var(--clcian); /* Green background */
+   cursor: pointer; /* Cursor on hover */
+}
+.valores{
+   width: 96%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   align-content: center;
+   margin-top: 15px;
+   margin-bottom: 15px;
+
+}
+.input-txt{
+   color: var(--clwhite);
+   display: flex;
+   flex-direction: column;
+   width: 49%;
+   text-align: center;
+   background-color: var(--cldark3);
+   margin-top: 6px;
+   border: solid 1px  var(--cldark3);
+}
+.active{
+   transition: 200ms;
+   color: var(--clpink);
+   background-color: var(--cldark2);
+   border: solid 1px  var(--clpink);
+
+}
+
+.input-txt input{
+   border: none;
+   background-color: var(--cldark2);
+   border-top: solid 1px var(--cldark3);
+   outline: none;
+   color: var(--clwhite);
+
+}
+.input-txt:hover{
+   border: solid 1px  var(--clwhite);
+ 
+}
+#copy{
+   background-color: var(--cldark3);
+   width:calc(100vw - 10px) ;
+   text-align: center;
+   padding: 5px;
+   color: var(--clwhite);
+   font-weight: 400;
+   cursor: pointer;
+   user-select: none;
+   position: absolute;
+   bottom: 0;
+   border-radius: 4px 4px  0 0;
+}
+#copy:hover{
+   color: var(--clgreen);
+}
+.inputs div label{
+   opacity: 50%;
+   margin-left: 3px;
+   transition: 200ms;
+   font-size: 14px;
+}
+.inputs div:hover label{
+   opacity: 1;
+} 
